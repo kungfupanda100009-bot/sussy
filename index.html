@@ -517,7 +517,7 @@
       <h3>License Information</h3>
       <div class="form-group"><label>Licence Number</label><input type="text" id="f_permit_num" placeholder="12345678"></div>
       <div class="form-group"><label>Issue Date</label><input type="text" id="f_issue_date" placeholder="DD/MM/YYYY"></div>
-      <div class="form-group"><label>P1 Issue Date</label><input type="text" id="f_p1_issue_date" placeholder="DD/MM/YYYY"></div>
+      <div class="form-group"><label>P1 end Date</label><input type="text" id="f_p1_end_date" placeholder="DD/MM/YYYY"></div>
       <div class="form-group"><label>Expiry Date</label><input type="text" id="f_expiry" placeholder="DD/MM/YYYY"></div>
       <div class="form-group"><label>Card Number</label><input type="text" id="f_card_num" placeholder="1234567890ABC"></div>
       <div class="form-group"><label>Licence Type</label><input type="text" id="f_permit_type" placeholder="P1"></div>
@@ -544,7 +544,7 @@
 // ---- STATE ----
 let state = {
   profile: { full_name:'', first_name:'', address1:'', address2:'', dob:'', photo_url:'', sig_url:'' },
-  licence: { permit_num:'', issue_date:'', p1_issue_date:'', expiry:'', card_num:'', permit_type:'P' },
+  licence: { permit_num:'', issue_date:'', p1_end_date:'', expiry:'', card_num:'', permit_type:'P' },
   demerit: { balance:0, threshold:12 }
 };
 let currentTab = 'permit';
@@ -653,7 +653,7 @@ function renderTab() {
           </div>
         </div>
         <div class="detail-item"><p class="label" style="font-size:13px;color:#6B7280;margin-bottom:4px;">Issue date</p><p style="font-weight:600;color:#2D3748;">${l.issue_date || '-'}</p></div>
-        <div class="detail-item"><p class="label" style="font-size:13px;color:#6B7280;margin-bottom:4px;">P1 issue date</p><p style="font-weight:600;color:#2D3748;">${l.p1_issue_date || '-'}</p></div>
+        <div class="detail-item"><p class="label" style="font-size:13px;color:#6B7280;margin-bottom:4px;">P1 end date</p><p style="font-weight:600;color:#2D3748;">${l.p1_end_date || '-'}</p></div>
         <div class="detail-item"><p class="label" style="font-size:13px;color:#6B7280;margin-bottom:4px;">Expiry</p><p style="font-weight:600;color:#2D3748;">${l.expiry || '-'}</p></div>
       </div>
       <div class="section-bar" style="margin:0 -20px;margin-top:16px;"><h3>Other details</h3></div>
@@ -750,7 +750,7 @@ function loadAdmin() {
   document.getElementById('f_dob').value = p.dob || '';
   document.getElementById('f_permit_num').value = l.permit_num || '';
   document.getElementById('f_issue_date').value = l.issue_date || '';
-  document.getElementById('f_p1_issue_date').value = l.p1_issue_date || '';
+  document.getElementById('f_p1_end_date').value = l.p1_end_date || '';
   document.getElementById('f_expiry').value = l.expiry || '';
   document.getElementById('f_card_num').value = l.card_num || '';
   document.getElementById('f_permit_type').value = l.permit_type || 'P';
@@ -796,7 +796,7 @@ function saveAll() {
   state.profile.dob = document.getElementById('f_dob').value;
   state.licence.permit_num = document.getElementById('f_permit_num').value;
   state.licence.issue_date = document.getElementById('f_issue_date').value;
-  state.licence.p1_issue_date = document.getElementById('f_p1_issue_date').value;
+  state.licence.p1_end_date = document.getElementById('f_p1_end_date').value;
   state.licence.expiry = document.getElementById('f_expiry').value;
   state.licence.card_num = document.getElementById('f_card_num').value;
   state.licence.permit_type = document.getElementById('f_permit_type').value;
