@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="apple-touch-icon" sizes="180x180" href="data:image/png;base64,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">
+<link rel="icon" type="image/png" sizes="32x32" href="data:image/png;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkMEQ8SEhEPERETFhwXExQaFRERGCEYGh0dHx8fExciJCIeJBweHx7/2wBDAQUFBQcGBw4ICA4eFBEUHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh7/wAARCAAgACADASIAAhEBAxEB/8QAGQAAAgMBAAAAAAAAAAAAAAAABgcEBQgA/8QAKhAAAQMCBgIBAwUAAAAAAAAAAQIDBAUGAAcREiFBMWFRCBMiFBUjcZH/xAAXAQADAQAAAAAAAAAAAAAAAAADBAUB/8QAKhEAAQMCAwUJAAAAAAAAAAAAAQIDBAAxERITISIjQVEFFGGBkaHB0fD/2gAMAwEAAhEDEQA/ANKZf35Gru2nVFSI9TA/HpL/ALT8H1/mDfCbzTy9kQ0OVu2m3C2j+R2M3rva053N6c6evI69QrJzFhXRTF2beM+REckpDLc5h8sl8HjYpY5So+NRpr6PmbEfeRwZFxY9ajJ7T7u6I8nYTY8j5/vWjSp5u2RBrEilGoPSX46tjiozJcbCu07hwSO9MFVuV2l3BA/W0uR95sHaoFJSpB+CDyMK28spLRtuxavUKBCkNTosRbkdS5C1gLA41BPOIH0qVmdUf3yHUoyWZMZLJKmwQhxJK9Dp0eMMYyQ4Ngy8+oo8ZU7VOuE5TbDH5p6YS2d2UQq7Eiu2qwlFQ5W/CTwmR8lHwv14P9+XTjsHWgLGBo82CzNa03hiPceIrKeXOczkOBIse/HHRFcQqMxOeB3xleNjuvO0Hjd5T3x4deU9vN0aoVOQ1sKJLbRStJ1Ch+RBBHkc4pM7skKRmCsVSBJRR62NAuQGtzcgfDiQRyOlDno68aX+SViVTL+11UepXK7WRu1ZQWtjcZPaEakqI75Og6AxjeZO6bUvBakMcF3eSLK+6//Z">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="myVicRoads">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>myVicRoads</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #F2F2F7; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+  .screen { display: none; min-height: 100vh; }
+  .screen.active { display: flex; flex-direction: column; }
+  button { border: none; background: none; cursor: pointer; font-family: inherit; }
+  input, textarea, select { font-family: inherit; }
+
+  /* SPLASH */
+  #splash { background: white; align-items: center; justify-content: center; flex-direction: column; }
+  .spinner-wrap { position: relative; width: 48px; height: 48px; margin-top: 40px; }
+  @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+  .spinner-svg { animation: spin 1s linear infinite; }
+
+  /* PIN */
+  #pin { background: white; align-items: center; justify-content: center; flex-direction: column; padding: 40px 24px; }
+  .pin-lock-img { width: 96px; margin-bottom: 24px; }
+  .pin-title { font-size: 17px; font-weight: 700; color: #111; text-align: center; margin-bottom: 32px; }
+  .pin-dots { display: flex; gap: 24px; margin-bottom: 64px; }
+  .pin-dot { width: 20px; height: 20px; border-radius: 50%; border: 2px solid #ccc; transition: all 0.15s; }
+  .pin-dot.filled { border-color: #111; background: #111; }
+  .pin-grid { width: 100%; max-width: 280px; }
+  .pin-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px 64px; margin-bottom: 12px; }
+  .pin-row.last { grid-template-columns: repeat(3, 1fr); gap: 12px 64px; }
+  .pin-btn { height: 56px; display: flex; align-items: center; justify-content: center; font-size: 24px; font-weight: 400; color: #111; border-radius: 50%; transition: background 0.1s; }
+  .pin-btn:active { background: #f0f0f0; }
+  .pin-btn.forgot { font-size: 13px; color: #111; font-weight: 400; }
+  .pin-btn.delete img { width: 48px; height: 48px; }
+
+  /* HOME */
+  #home { background: #E8EDF1; flex-direction: column; padding-bottom: 80px; }
+  .home-header { background: #E8EDF1; padding: 16px 20px; display: flex; align-items: center; gap: 12px; }
+  .home-logo { width: 48px; height: 48px; cursor: pointer; }
+  .home-title { font-size: 18px; font-weight: 600; color: #111; }
+  .home-cards { padding: 0 16px; }
+  .home-card { background: white; border-radius: 12px; padding: 0 18px 14px; box-shadow: 0 1px 3px rgba(0,0,0,0.08); margin-bottom: 10px; cursor: pointer; transition: transform 0.1s; }
+  .home-card:active { transform: scale(0.98); }
+  .home-card img { width: 48px; height: 48px; margin-bottom: 8px; }
+  .home-card h3 { font-size: 17px; font-weight: 600; color: #2D3E50; margin-top: -8px; }
+  .licence-preview-wrap { position: fixed; bottom: 70px; left: 0; right: 0; padding: 0 16px; z-index: 40; transform: translateY(30%); }
+  .licence-preview-wrap img { width: 100%; border-radius: 5px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); cursor: pointer; transition: transform 0.1s; }
+  .licence-preview-wrap img:active { transform: scale(0.99); }
+
+  /* LICENCE DETAIL */
+  #licence-detail { background: white; flex-direction: column; }
+  .back-header { position: sticky; top: 0; background: white; border-bottom: 1px solid #e5e5e5; padding: 12px 16px; display: flex; align-items: center; z-index: 50; }
+  .back-btn { padding: 4px; margin-left: -4px; color: #111; font-size: 24px; line-height: 1; }
+  .back-header h1 { flex: 1; text-align: center; font-size: 17px; font-weight: 600; color: #111; padding-right: 28px; }
+  .refresh-bar { padding: 8px 16px; text-align: center; }
+  .refresh-bar p { font-size: 12px; color: #999; }
+  .licence-banner { background: #DE3424; padding: 16px 20px; display: flex; align-items: center; justify-content: space-between; position: relative; }
+  .licence-banner-text h2 { font-size: 13px; font-weight: 700; color: white; }
+  .licence-banner-text p { font-size: 11px; color: white; }
+  .licence-banner img { height: 80px; filter: brightness(0) invert(1); }
+  .licence-card-wrap { position: relative; }
+  .licence-card-wrap > img.bg { width: 100%; height: auto; }
+  .licence-card-content { position: absolute; inset: 0; padding: 15px 19px; display: flex; gap: 14px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.3); }
+  .photo-area { width: 48%; aspect-ratio: 3/4; overflow: hidden; border-radius: 5px; position: relative; flex-shrink: 0; background: #e0e0e0; display: flex; align-items: center; justify-content: center; }
+  .photo-area img.photo { width: 100%; height: 100%; object-fit: cover; }
+  .photo-area .hologram { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; pointer-events: none; transition: opacity 0.3s; }
+  .photo-placeholder { color: #999; font-size: 11px; text-align: center; }
+  .qr-area { flex: 1; aspect-ratio: 3/4; border-radius: 5px; overflow: hidden; position: relative; }
+  .qr-area img { width: 100%; height: 100%; object-fit: cover; }
+  .qr-tap-btn { position: absolute; bottom: 0; left: 0; right: 0; height: 40px; background: transparent; cursor: pointer; margin: 12px 16px; }
+  .tab-bar { padding: 16px; background: white; }
+  .tab-bar-inner { display: flex; border: 1px solid #d1d5db; border-radius: 9999px; padding: 0; }
+  .tab-btn { flex: 1; padding: 6px; font-size: 13px; font-weight: 700; border-radius: 9999px; transition: all 0.15s; color: #6B7280; background: transparent; }
+  .tab-btn.active { color: white; background: #2D3E50; }
+  .licence-details { padding: 20px; }
+  .detail-name { font-size: 22px; font-weight: 700; color: #111; margin-bottom: 16px; }
+  .divider { width: 100%; height: 1px; background: #e5e5e5; margin-bottom: 24px; }
+  .detail-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 24px; }
+  .detail-item p.label { font-size: 13px; color: #999; margin-bottom: 4px; }
+  .detail-item p.value { font-weight: 600; color: #111; }
+  .section-bar { background: #E8EAF0; padding: 8px 20px; margin: 0 -20px; }
+  .section-bar h3 { font-size: 13px; font-weight: 600; color: #5B6B7C; }
+  .section-content { margin-top: 16px; }
+  .section-content .detail-item { margin-bottom: 16px; }
+  .status-row { display: flex; align-items: center; gap: 8px; }
+  .status-badge { width: 24px; height: 24px; border-radius: 50%; background: #52B848; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .p-badge { display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; background: #DE3424; color: white; font-weight: 700; font-size: 15px; }
+  .card-num-row { display: flex; align-items: center; justify-content: space-between; }
+  .card-num { font-size: 18px; font-weight: 600; color: #2D3748; letter-spacing: 2px; }
+  .eye-btn { padding: 4px; color: #999; }
+  .barcode-wrap { background: white; border: none; padding: 0; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+  .barcode-wrap img { height: 100px; object-fit: contain; flex: 1; width: 0; }
+  .sig-area { height: 64px; display: flex; align-items: center; }
+  .sig-area img { height: 100%; }
+  .sig-area.empty { color: #999; font-size: 13px; font-style: italic; }
+  .age-status { display: flex; align-items: center; gap: 12px; }
+  .age-check { width: 28px; height: 28px; border-radius: 50%; background: #52B848; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+
+  /* QR VIEW */
+  #qr-view { background: white; flex-direction: column; }
+  .qr-header { position: sticky; top: 0; background: white; border-bottom: 1px solid #e5e5e5; padding: 12px 16px; display: flex; align-items: center; justify-content: space-between; z-index: 10; }
+  .qr-header h1 { font-size: 17px; font-weight: 600; color: #111; }
+  .qr-header button { font-size: 15px; color: #111; }
+  .qr-canvas-wrap { padding: 24px; display: flex; justify-content: center; }
+  .qr-canvas-wrap canvas { width: 280px; height: 280px; border: 2px solid #d1d5db; border-radius: 8px; }
+  .qr-timer { text-align: center; font-size: 20px; font-weight: 600; color: #111; margin-bottom: 32px; }
+  .qr-text { padding: 0 24px; font-size: 13px; color: #555; line-height: 1.6; }
+  .qr-text p { margin-bottom: 16px; }
+  .qr-share-list { list-style: none; padding: 0; }
+  .qr-share-list li { padding: 4px 0; }
+  .qr-share-list li::before { content: "• "; }
+
+  /* DEMERIT */
+  #demerit { background: white; flex-direction: column; }
+  .demerit-card { background: linear-gradient(135deg, #52B848, #45A03A); border-radius: 16px; padding: 24px; color: white; box-shadow: 0 4px 15px rgba(82,184,72,0.3); margin-bottom: 24px; }
+  .demerit-card h2 { font-size: 13px; opacity: 0.9; margin-bottom: 8px; }
+  .demerit-score { display: flex; align-items: baseline; gap: 8px; }
+  .demerit-score .num { font-size: 52px; font-weight: 700; }
+  .demerit-score .denom { font-size: 24px; opacity: 0.75; }
+  .demerit-card p { font-size: 13px; margin-top: 8px; opacity: 0.9; }
+  .info-card { background: #F2F2F7; border-radius: 16px; padding: 20px; margin-bottom: 16px; }
+  .info-card h3 { font-weight: 600; color: #111; margin-bottom: 8px; }
+  .info-card p { font-size: 13px; color: #555; line-height: 1.6; }
+  .good-card { border: 1px solid #e5e5e5; border-radius: 16px; padding: 20px; }
+  .good-card h3 { font-weight: 600; color: #111; margin-bottom: 8px; }
+  .good-card p { font-size: 13px; color: #555; }
+
+  /* VEHICLES */
+  #vehicles { background: #F2F2F7; flex-direction: column; padding-bottom: 80px; }
+  #registered-vehicles { background: white; flex-direction: column; }
+  .center-header { position: sticky; top: 0; background: white; border-bottom: 1px solid #e5e5e5; padding: 12px 16px; z-index: 10; }
+  .center-header h1 { text-align: center; font-size: 17px; font-weight: 600; color: #111; }
+  .menu-list { background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.08); margin: 16px; }
+  .menu-item { padding: 16px 20px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #f0f0f0; cursor: pointer; }
+  .menu-item:last-child { border-bottom: none; }
+  .menu-item:active { background: #f9f9f9; }
+  .menu-item h3 { font-weight: 600; color: #111; }
+  .menu-item p { font-size: 13px; color: #999; margin-top: 2px; }
+  .menu-item svg { color: #ccc; flex-shrink: 0; }
+  .empty-state { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 40px; }
+  .empty-icon { width: 80px; height: 80px; background: rgba(82,184,72,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 16px; }
+  .empty-state h2 { font-size: 20px; font-weight: 600; color: #111; margin-bottom: 8px; }
+  .empty-state p { font-size: 13px; color: #999; text-align: center; max-width: 280px; }
+
+  /* LICENCE MENU */
+  #licence { background: #F2F2F7; flex-direction: column; padding-bottom: 80px; }
+
+  /* PAYMENTS */
+  #payments { background: #F2F2F7; flex-direction: column; padding-bottom: 80px; }
+
+  /* PROFILE */
+  #profile { background: #F2F2F7; flex-direction: column; padding-bottom: 80px; }
+
+  /* ADMIN */
+  #admin { background: white; flex-direction: column; }
+  .admin-hero { background: linear-gradient(135deg, #52B848, #45A03A); border-radius: 16px; padding: 24px; color: white; margin-bottom: 24px; }
+  .admin-hero h2 { font-size: 20px; font-weight: 700; margin-bottom: 4px; }
+  .admin-hero p { font-size: 13px; opacity: 0.9; }
+  .admin-section h3 { font-size: 17px; font-weight: 600; color: #111; margin-bottom: 16px; }
+  .form-group { margin-bottom: 16px; }
+  .form-group label { display: block; font-size: 13px; font-weight: 500; color: #555; margin-bottom: 6px; }
+  .form-group input { width: 100%; padding: 10px 12px; border: 1px solid #d1d5db; border-radius: 8px; font-size: 15px; color: #111; background: white; }
+  .form-group input:focus { outline: none; border-color: #52B848; box-shadow: 0 0 0 3px rgba(82,184,72,0.1); }
+  .upload-btn-label { display: inline-flex; align-items: center; gap: 8px; padding: 8px 16px; border: 1px solid #d1d5db; border-radius: 8px; font-size: 13px; font-weight: 500; color: #111; cursor: pointer; background: white; }
+  .upload-btn-label:hover { background: #f9f9f9; }
+  .preview-img { width: 128px; height: 128px; object-fit: cover; border-radius: 8px; margin-bottom: 8px; display: block; }
+  .preview-sig { height: 64px; margin-bottom: 8px; display: block; border: 1px solid #e5e5e5; border-radius: 4px; background: white; }
+  .save-bar { position: sticky; bottom: 0; background: white; border-top: 1px solid #e5e5e5; padding: 16px; }
+  .save-btn { width: 100%; padding: 12px; background: #52B848; color: white; border-radius: 8px; font-size: 15px; font-weight: 600; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; transition: background 0.15s; }
+  .save-btn:hover { background: #45A03A; }
+  .save-btn:disabled { opacity: 0.6; cursor: not-allowed; }
+  .section-divider { border: none; border-top: 1px solid #f0f0f0; margin: 24px 0; }
+
+  /* NAV */
+  .nav-bar { position: fixed; bottom: 0; left: 0; right: 0; z-index: 50; background: white; }
+  .nav-img-wrap { position: relative; padding-top: 12px; }
+  .nav-img-wrap > img { width: 100%; height: auto; }
+  .nav-indicator { position: absolute; top: 16px; background: rgba(200,200,200,0.3); border-radius: 9999px; width: 70px; height: 38px; }
+  .nav-buttons { position: absolute; inset: 0; display: flex; }
+  .nav-btn { flex: 1; height: 100%; background: transparent; cursor: pointer; }
+
+  /* UTILITY */
+  .p-content { padding: 24px; }
+  .p-4 { padding: 16px; }
+  .mb-4 { margin-bottom: 16px; }
+  .text-sm { font-size: 13px; }
+  .text-gray { color: #999; }
+  .font-semibold { font-weight: 600; }
+  .w-full { width: 100%; }
+  .rounded { border-radius: 8px; }
+  .overflow-hidden { overflow: hidden; }
+  .flex { display: flex; }
+  .items-center { align-items: center; }
+  .gap-2 { gap: 8px; }
+</style>
+</head>
+<body>
+
+<!-- SPLASH -->
+<div id="splash" class="screen active">
+  <div style="display:flex; flex-direction:column; align-items:center; justify-content:center; height:100vh;">
+    <img src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/68f76fb0e5537db2ab995755/e33566394_image.png" alt="myVicRoads" style="height:48px; margin-bottom: 60px;">
+    <div class="spinner-wrap">
+      <svg width="48" height="48" viewBox="0 0 24 24" fill="none" class="spinner-svg">
+        <defs><linearGradient id="sg" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#52B848" stop-opacity="0"/><stop offset="100%" stop-color="#52B848" stop-opacity="1"/></linearGradient></defs>
+        <circle cx="12" cy="12" r="10" stroke="url(#sg)" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </div>
+  </div>
+</div>
+
+<!-- PIN ENTRY -->
+<div id="pin" class="screen">
+  <img src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/68f76fb0e5537db2ab995755/ed3f288cd_IMG_6899.jpg" alt="Lock" class="pin-lock-img">
+  <h1 class="pin-title">Please enter your existing PIN code</h1>
+  <div class="pin-dots" id="pinDots">
+    <div class="pin-dot"></div><div class="pin-dot"></div><div class="pin-dot"></div>
+    <div class="pin-dot"></div><div class="pin-dot"></div><div class="pin-dot"></div>
+  </div>
+  <div class="pin-grid">
+    <div class="pin-row" id="pinNumRow1"></div>
+    <div class="pin-row" id="pinNumRow2"></div>
+    <div class="pin-row" id="pinNumRow3"></div>
+    <div class="pin-row last" id="pinBottom"></div>
+  </div>
+</div>
+
+<!-- HOME -->
+<div id="home" class="screen">
+  <div class="home-header">
+    <h1 class="home-title" id="homeGreeting">Hi User</h1>
+  </div>
+  <div class="home-cards">
+    <div class="home-card" onclick="show('demerit')">
+      <img src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/68f76fb0e5537db2ab995755/0d9abd62a_IMG_6900.jpg" alt="">
+      <h3>Demerit points balance</h3>
+    </div>
+    <div class="home-card" onclick="show('registered-vehicles')">
+      <img src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/68f76fb0e5537db2ab995755/f04601d5d_IMG_6901.jpg" alt="">
+      <h3>Registered vehicles</h3>
+    </div>
+  </div>
+  <div class="licence-preview-wrap">
+    <img src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/68f76fb0e5537db2ab995755/b83abeb89_IMG_6942.jpg" alt="My licence" onclick="show('licence-detail')">
+  </div>
+  <div class="nav-bar"><div class="nav-img-wrap">
+    <img src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/68f76fb0e5537db2ab995755/29b561457_IMG_6936-removebg-preview1.png" alt="Nav">
+    <div class="nav-indicator" style="left: calc(10% - 35px);"></div>
+    <div class="nav-buttons">
+      <button class="nav-btn" onclick="show('home')"></button>
+      <button class="nav-btn" onclick="show('vehicles')"></button>
+      <button class="nav-btn" onclick="show('licence')"></button>
+      <button class="nav-btn" onclick="show('payments')"></button>
+      <button class="nav-btn" onclick="show('profile')"></button>
+    </div>
+  </div></div>
+</div>
+
+<!-- LICENCE DETAIL -->
+<div id="licence-detail" class="screen">
+  <div class="back-header">
+    <button class="back-btn" onclick="show('home')">&#8249;</button>
+    <h1>View details</h1>
+  </div>
+  <div class="refresh-bar">
+    <p id="refreshTime"></p>
+  </div>
+  <div class="licence-banner">
+    <div class="licence-banner-text">
+      <h2>PROBATIONARY DRIVER LICENCE</h2>
+      <p>Victoria Australia</p>
+    </div>
+    <img src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/68f76fb0e5537db2ab995755/b7be7c363_image.png" alt="VicRoads">
+  </div>
+  <div class="licence-card-wrap">
+    <img class="bg" src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/68f76fb0e5537db2ab995755/469154745_outline.png" alt="">
+    <div class="licence-card-content">
+      <div class="photo-area" id="photoArea">
+        <div class="photo-placeholder">No photo</div>
+      </div>
+      <div class="qr-area" onclick="show('qr-view')">
+        <img src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/68f76fb0e5537db2ab995755/302b6d8d2_Screenshot2025-10-23at10400pm.jpeg" alt="QR">
+      </div>
+    </div>
+  </div>
+  <div class="tab-bar">
+    <div class="tab-bar-inner">
+      <button class="tab-btn active" id="tabPermit" onclick="switchTab('permit')">Licence</button>
+      <button class="tab-btn" id="tabIdentity" onclick="switchTab('identity')">Identity</button>
+      <button class="tab-btn" id="tabAge" onclick="switchTab('age')">Age</button>
+    </div>
+  </div>
+  <div class="licence-details" id="licenceTabContent"></div>
+</div>
+
+<!-- QR VIEW -->
+<div id="qr-view" class="screen">
+  <div class="qr-header">
+    <h1>Verify Licence</h1>
+    <button onclick="show('licence-detail')">Close</button>
+  </div>
+  <div class="qr-canvas-wrap">
+    <canvas id="qrCanvas" width="280" height="280"></canvas>
+  </div>
+  <p class="qr-timer" id="qrTimer">02:00</p>
+  <div class="qr-text">
+    <p>By presenting this QR code you <strong>consent</strong> to share some or all of your driver licence information, including with scanners, venues and law enforcement agencies. They may retain your information in accordance with their business practices and legal requirements.</p>
+    <p><strong>You're sharing:</strong></p>
+    <ul class="qr-share-list">
+      <li>Victorian driver licence photo</li>
+      <li>Full name, birth date and address</li>
+      <li>Licence number, type and expiry date</li>
+      <li>Licence status</li>
+      <li>Proficiency</li>
+    </ul>
+  </div>
+</div>
+
+<!-- DEMERIT -->
+<div id="demerit" class="screen">
+  <div class="back-header">
+    <button class="back-btn" onclick="show('home')">&#8249;</button>
+    <h1>Demerit points</h1>
+  </div>
+  <div class="p-content">
+    <div class="demerit-card">
+      <h2>Current Balance</h2>
+      <div class="demerit-score">
+        <span class="num" id="demeritBalance">0</span>
+        <span class="denom" id="demeritThreshold">/ 12</span>
+      </div>
+      <p>demerit points</p>
+    </div>
+    <div class="info-card">
+      <h3>Information</h3>
+      <p>Demerit points are recorded against your licence when you commit certain driving offences. If you accumulate too many points, your licence may be suspended.</p>
+    </div>
+    <div class="good-card">
+      <h3>Good driving record</h3>
+      <p id="demeritMsg">You currently have 0 demerit points. Keep up the safe driving!</p>
+    </div>
+  </div>
+</div>
+
+<!-- VEHICLES -->
+<div id="vehicles" class="screen">
+  <div class="center-header"><h1>Vehicles</h1></div>
+  <div class="menu-list">
+    <div class="menu-item" onclick="show('registered-vehicles')">
+      <div><h3>My registered vehicles</h3><p>View all registered vehicles</p></div>
+      <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M15 3h6v6M10 14L21 3M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/></svg>
+    </div>
+    <div class="menu-item"><div><h3>Manage registration renewal</h3><p>Renew your registration when it's due</p></div><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg></div>
+    <div class="menu-item"><div><h3>Change your garage address</h3></div><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg></div>
+    <div class="menu-item"><div><h3>Apprentice registration discount</h3></div><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg></div>
+    <div class="menu-item"><div><h3>Unregistered vehicle permits</h3></div><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg></div>
+    <div class="menu-item"><div><h3>My vehicle reports</h3></div><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg></div>
+  </div>
+  <div class="nav-bar"><div class="nav-img-wrap">
+    <img src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/68f76fb0e5537db2ab995755/29b561457_IMG_6936-removebg-preview1.png" alt="Nav">
+    <div class="nav-indicator" style="left: calc(30% - 35px);"></div>
+    <div class="nav-buttons">
+      <button class="nav-btn" onclick="show('home')"></button>
+      <button class="nav-btn" onclick="show('vehicles')"></button>
+      <button class="nav-btn" onclick="show('licence')"></button>
+      <button class="nav-btn" onclick="show('payments')"></button>
+      <button class="nav-btn" onclick="show('profile')"></button>
+    </div>
+  </div></div>
+</div>
+
+<!-- REGISTERED VEHICLES -->
+<div id="registered-vehicles" class="screen">
+  <div class="back-header">
+    <button class="back-btn" onclick="show('vehicles')">&#8249;</button>
+    <h1>My vehicles</h1>
+  </div>
+  <div class="empty-state">
+    <div class="empty-icon">
+      <svg width="40" height="40" fill="none" stroke="#52B848" stroke-width="1.5" viewBox="0 0 24 24"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 002 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><path d="M9 17h6"/><circle cx="17" cy="17" r="2"/></svg>
+    </div>
+    <h2>No registered vehicles</h2>
+    <p>You don't have any registered vehicles yet. They will appear here once registered.</p>
+  </div>
+</div>
+
+<!-- LICENCE MENU -->
+<div id="licence" class="screen">
+  <div class="center-header"><h1>Licence</h1></div>
+  <div class="p-4">
+    <div style="margin-bottom:16px; cursor:pointer;" onclick="show('licence-detail')">
+      <img src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/68f76fb0e5537db2ab995755/462aab022_IMG_6942.jpg" alt="" style="width:100%; border-radius:16px; box-shadow:0 4px 20px rgba(0,0,0,0.15); transition: transform 0.1s;" onmousedown="this.style.transform='scale(0.98)'" onmouseup="this.style.transform=''" ontouchstart="this.style.transform='scale(0.98)'" ontouchend="this.style.transform=''">
+    </div>
+    <div class="menu-list">
+      <div class="menu-item" onclick="show('demerit')"><div><h3>View demerit points</h3></div><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M15 3h6v6M10 14L21 3M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/></svg></div>
+      <div class="menu-item"><div><h3>Order driver history report</h3></div><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg></div>
+      <div class="menu-item"><div><h3>Update address on licence</h3></div><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg></div>
+      <div class="menu-item"><div><h3>Access myLearners</h3></div><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg></div>
+      <div class="menu-item"><div><h3>Replace licence</h3></div><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg></div>
+      <div class="menu-item"><div><h3>Manage licence renewal</h3><p>Renew your licence when it's due</p></div><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg></div>
+    </div>
+  </div>
+  <div class="nav-bar"><div class="nav-img-wrap">
+    <img src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/68f76fb0e5537db2ab995755/29b561457_IMG_6936-removebg-preview1.png" alt="Nav">
+    <div class="nav-indicator" style="left: calc(50% - 35px);"></div>
+    <div class="nav-buttons">
+      <button class="nav-btn" onclick="show('home')"></button>
+      <button class="nav-btn" onclick="show('vehicles')"></button>
+      <button class="nav-btn" onclick="show('licence')"></button>
+      <button class="nav-btn" onclick="show('payments')"></button>
+      <button class="nav-btn" onclick="show('profile')"></button>
+    </div>
+  </div></div>
+</div>
+
+<!-- PAYMENTS -->
+<div id="payments" class="screen">
+  <div class="center-header"><h1>Payments</h1></div>
+  <div class="menu-list" style="margin:16px;">
+    <div class="menu-item" onclick="show('admin')"><div><h3>Manage payment methods</h3><p>Store your credit card and bank account details</p></div><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg></div>
+    <div class="menu-item"><div><h3>Direct debit payments</h3><p>Manage direct debit settings</p></div><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg></div>
+    <div class="menu-item"><div><h3>Transaction history</h3><p>View recent transactions</p></div><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg></div>
+  </div>
+  <div class="nav-bar"><div class="nav-img-wrap">
+    <img src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/68f76fb0e5537db2ab995755/29b561457_IMG_6936-removebg-preview1.png" alt="Nav">
+    <div class="nav-indicator" style="left: calc(70% - 35px);"></div>
+    <div class="nav-buttons">
+      <button class="nav-btn" onclick="show('home')"></button>
+      <button class="nav-btn" onclick="show('vehicles')"></button>
+      <button class="nav-btn" onclick="show('licence')"></button>
+      <button class="nav-btn" onclick="show('payments')"></button>
+      <button class="nav-btn" onclick="show('profile')"></button>
+    </div>
+  </div></div>
+</div>
+
+<!-- PROFILE -->
+<div id="profile" class="screen">
+  <div class="center-header"><h1>Profile</h1></div>
+  <div class="p-4">
+    <div class="menu-list" style="margin-bottom:16px;">
+      <div style="padding:12px 20px; border-bottom:1px solid #f0f0f0;"><h3 style="font-weight:600;color:#111;">Profile and settings</h3></div>
+      <div class="menu-item"><h3 style="font-weight:400;">Personal information</h3><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M15 3h6v6M10 14L21 3M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/></svg></div>
+      <div class="menu-item"><h3 style="font-weight:400;">Addresses</h3><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M15 3h6v6M10 14L21 3M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/></svg></div>
+      <div class="menu-item"><h3 style="font-weight:400;">Security settings</h3><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M15 3h6v6M10 14L21 3M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/></svg></div>
+      <div class="menu-item"><h3 style="font-weight:400;">Passkey settings</h3><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg></div>
+    </div>
+    <div class="menu-list">
+      <div style="padding:12px 20px; border-bottom:1px solid #f0f0f0;"><h3 style="font-weight:600;color:#111;">App controls</h3></div>
+      <div class="menu-item"><div><h3 style="font-weight:400;">Biometrics and settings</h3><p>Enable biometrics and deactivate card or account</p></div><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg></div>
+      <div class="menu-item"><h3 style="font-weight:400;">Help and info</h3><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg></div>
+      <div class="menu-item"><h3 style="font-weight:400;">Provide app feedback</h3><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M15 3h6v6M10 14L21 3M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/></svg></div>
+    </div>
+  </div>
+  <div class="nav-bar"><div class="nav-img-wrap">
+    <img src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/68f76fb0e5537db2ab995755/29b561457_IMG_6936-removebg-preview1.png" alt="Nav">
+    <div class="nav-indicator" style="left: calc(90% - 35px);"></div>
+    <div class="nav-buttons">
+      <button class="nav-btn" onclick="show('home')"></button>
+      <button class="nav-btn" onclick="show('vehicles')"></button>
+      <button class="nav-btn" onclick="show('licence')"></button>
+      <button class="nav-btn" onclick="show('payments')"></button>
+      <button class="nav-btn" onclick="show('profile')"></button>
+    </div>
+  </div></div>
+</div>
+
+<!-- ADMIN PANEL -->
+<div id="admin" class="screen">
+  <div class="back-header">
+    <button class="back-btn" onclick="show('home')">&#8249;</button>
+    <h1>Admin Panel</h1>
+  </div>
+  <div style="padding:24px 24px 120px;">
+    <div class="admin-hero">
+      <h2>Editor mode</h2>
+      <p>Set your preferences and information</p>
+    </div>
+
+    <div class="admin-section">
+      <h3>Personal Information</h3>
+      <div class="form-group"><label>Full Name</label><input type="text" id="f_full_name" placeholder="John Doe"></div>
+      <div class="form-group"><label>First Name (for greeting)</label><input type="text" id="f_first_name" placeholder="John"></div>
+      <div class="form-group"><label>Street Address</label><input type="text" id="f_address1" placeholder="6 Smith St"></div>
+      <div class="form-group"><label>Suburb, State &amp; Postcode</label><input type="text" id="f_address2" placeholder="HAMPTON, VIC 3188"></div>
+      <div class="form-group"><label>Date of Birth</label><input type="text" id="f_dob" placeholder="DD/MM/YYYY"></div>
+
+      <div class="form-group">
+        <label>License Photo</label>
+        <div id="photoPreviewWrap"></div>
+        <input type="file" accept="image/*" id="photoFile" style="display:none;" onchange="handlePhoto(this)">
+        <label for="photoFile" class="upload-btn-label">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" x2="12" y1="3" y2="15"/></svg>
+          Upload Photo
+        </label>
+      </div>
+
+      <div class="form-group">
+        <label>Signature Image</label>
+        <div id="sigPreviewWrap"></div>
+        <input type="file" accept="image/*" id="sigFile" style="display:none;" onchange="handleSig(this)">
+        <label for="sigFile" class="upload-btn-label">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" x2="12" y1="3" y2="15"/></svg>
+          Upload Signature
+        </label>
+      </div>
+    </div>
+
+    <hr class="section-divider">
+
+    <div class="admin-section">
+      <h3>License Information</h3>
+      <div class="form-group"><label>Licence Number</label><input type="text" id="f_permit_num" placeholder="12345678"></div>
+      <div class="form-group"><label>Issue Date</label><input type="text" id="f_issue_date" placeholder="DD/MM/YYYY"></div>
+      <div class="form-group"><label>P1 Issue Date</label><input type="text" id="f_p1_issue_date" placeholder="DD/MM/YYYY"></div>
+      <div class="form-group"><label>Expiry Date</label><input type="text" id="f_expiry" placeholder="DD/MM/YYYY"></div>
+      <div class="form-group"><label>Card Number</label><input type="text" id="f_card_num" placeholder="1234567890ABC"></div>
+      <div class="form-group"><label>Licence Type</label><input type="text" id="f_permit_type" placeholder="P1"></div>
+    </div>
+
+    <hr class="section-divider">
+
+    <div class="admin-section">
+      <h3>Demerit Points</h3>
+      <div class="form-group"><label>Current Balance</label><input type="number" id="f_demerit_bal" placeholder="0" min="0"></div>
+      <div class="form-group"><label>Threshold</label><input type="number" id="f_demerit_thresh" placeholder="12" min="0"></div>
+    </div>
+  </div>
+
+  <div class="save-bar">
+    <button class="save-btn" id="saveBtn" onclick="saveAll()">
+      <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M15.2 3a2 2 0 011.4.6l3.8 3.8a2 2 0 01.6 1.4V19a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2z"/><path d="M17 21v-7a1 1 0 00-1-1H8a1 1 0 00-1 1v7"/><path d="M7 3v4a1 1 0 001 1h7"/></svg>
+      Save All Changes
+    </button>
+  </div>
+</div>
+
+<script>
+// ---- STATE ----
+let state = {
+  profile: { full_name:'', first_name:'', address1:'', address2:'', dob:'', photo_url:'', sig_url:'' },
+  licence: { permit_num:'', issue_date:'', p1_issue_date:'', expiry:'', card_num:'', permit_type:'P' },
+  demerit: { balance:0, threshold:12 }
+};
+let currentTab = 'permit';
+let cardVisible = false;
+let qrInterval = null;
+let qrSeconds = 120;
+let secretCount = 0;
+let secretTimer = null;
+
+// ---- STORAGE ----
+function save() { try { localStorage.setItem('mvr_state', JSON.stringify(state)); } catch(e){} }
+function load() {
+  try {
+    const d = localStorage.getItem('mvr_state');
+    if (d) state = JSON.parse(d);
+  } catch(e){}
+}
+
+// ---- SCREENS ----
+function show(id) {
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  const el = document.getElementById(id);
+  if (el) {
+    el.classList.add('active');
+    window.scrollTo(0,0);
+    if (id === 'home') updateHome();
+    if (id === 'licence-detail') updateLicenceDetail();
+    if (id === 'qr-view') startQR();
+    if (id === 'demerit') updateDemerit();
+    if (id === 'admin') loadAdmin();
+    if (id === 'licence-detail') renderTab();
+    if (id !== 'qr-view' && qrInterval) { clearInterval(qrInterval); qrInterval = null; }
+  }
+}
+
+// ---- HOME ----
+function updateHome() {
+  const name = state.profile.first_name || 'User';
+  document.getElementById('homeGreeting').textContent = 'Hi ' + name;
+}
+
+function secretTap() {
+  secretCount++;
+  clearTimeout(secretTimer);
+  secretTimer = setTimeout(() => secretCount = 0, 2000);
+  if (secretCount >= 5) { secretCount = 0; show('admin'); }
+}
+function goAdmin() { show('admin'); }
+
+// ---- LICENCE DETAIL ----
+function updateLicenceDetail() {
+  const now = new Date();
+  document.getElementById('refreshTime').textContent = 'Last refreshed: ' + now.toLocaleString('en-AU', {weekday:'short',day:'numeric',month:'short',year:'numeric',hour:'2-digit',minute:'2-digit',hour12:false});
+  const pa = document.getElementById('photoArea');
+  if (state.profile.photo_url) {
+    pa.innerHTML = `<img class="photo" src="${state.profile.photo_url}" alt="Photo">
+      <img class="hologram" src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/68f76fb0e5537db2ab995755/ce36f2db6_Hologram2.png" alt="">`;
+  } else {
+    pa.innerHTML = '<div class="photo-placeholder">No photo</div>';
+  }
+}
+
+function switchTab(t) {
+  currentTab = t;
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('tab' + t.charAt(0).toUpperCase() + t.slice(1)).classList.add('active');
+  renderTab();
+}
+
+function renderTab() {
+  const el = document.getElementById('licenceTabContent');
+  const p = state.profile, l = state.licence;
+  if (currentTab === 'permit') {
+    const sigHTML = p.sig_url ? `<img src="${p.sig_url}" alt="Sig" style="height:64px;">` : '<div style="height:64px;display:flex;align-items:center;color:#999;font-size:13px;font-style:italic;">No signature available</div>';
+    el.innerHTML = `
+      <h2 class="detail-name">${p.full_name || 'NAME NOT SET'}</h2>
+      <div class="divider"></div>
+      <div class="detail-grid">
+        <div class="detail-item"><p class="label">Licence number</p><p class="value">${l.permit_num || '-'}</p></div>
+        <div class="detail-item"><p class="label">Expiry</p><p class="value">${l.expiry || '-'}</p></div>
+        <div class="detail-item"><p class="label">Licence type</p><p class="value" style="display:flex;align-items:center;gap:6px;">P1 <span style="background:#DE3424;color:white;padding:2px 7px;font-size:12px;font-weight:700;border-radius:3px;">${l.permit_type || 'P'}</span></p></div>
+        <div class="detail-item"><p class="label">Date of birth</p><p class="value">${p.dob || '-'}</p></div>
+      </div>
+      <div class="divider"></div>
+      <div style="margin-bottom:24px;">
+        <p class="label" style="font-size:13px;color:#999;margin-bottom:4px;">Address</p>
+        <p class="font-semibold" style="color:#111;">${p.address1 || '-'}</p>
+        <p class="font-semibold" style="color:#111;">${p.address2 || ''}</p>
+      </div>
+      <div class="divider"></div>
+      <div style="margin-bottom:12px;"><p class="label" style="font-size:13px;color:#999;margin-bottom:8px;">Signature</p>${sigHTML}</div>
+      <div class="section-bar" style="margin:0 -20px;"><h3>Car learner licence details</h3></div>
+      <div class="section-content">
+        <div class="detail-item">
+          <p class="label" style="font-size:13px;color:#6B7280;margin-bottom:4px;">Licence status</p>
+          <div class="status-row">
+            <div class="status-badge"><svg width="14" height="14" fill="none" stroke="white" stroke-width="2.5" viewBox="0 0 20 20"><path d="M6 10L9 13L14 7"/></svg></div>
+            <span style="font-weight:600;color:#2D3748;">Current</span>
+          </div>
+        </div>
+        <div class="detail-item">
+          <p class="label" style="font-size:13px;color:#6B7280;margin-bottom:4px;">Proficiency</p>
+          <div class="status-row">
+            <div class="p-badge">P</div>
+            <span style="font-weight:600;color:#2D3748;">P1</span>
+          </div>
+        </div>
+        <div class="detail-item"><p class="label" style="font-size:13px;color:#6B7280;margin-bottom:4px;">Issue date</p><p style="font-weight:600;color:#2D3748;">${l.issue_date || '-'}</p></div>
+        <div class="detail-item"><p class="label" style="font-size:13px;color:#6B7280;margin-bottom:4px;">P1 issue date</p><p style="font-weight:600;color:#2D3748;">${l.p1_issue_date || '-'}</p></div>
+        <div class="detail-item"><p class="label" style="font-size:13px;color:#6B7280;margin-bottom:4px;">Expiry</p><p style="font-weight:600;color:#2D3748;">${l.expiry || '-'}</p></div>
+      </div>
+      <div class="section-bar" style="margin:0 -20px;margin-top:16px;"><h3>Other details</h3></div>
+      <div class="section-content">
+        <div class="detail-item">
+          <p class="label" style="font-size:13px;color:#6B7280;margin-bottom:8px;">Card number</p>
+          <div class="card-num-row">
+            <span class="card-num" id="cardNumDisplay">${cardVisible ? (l.card_num || '-') : '*******'}</span>
+            <button class="eye-btn" onclick="toggleCard()">
+              ${cardVisible ? `<svg width="20" height="20" fill="none" stroke="#999" stroke-width="2" viewBox="0 0 24 24"><path d="M10.733 5.076a10.744 10.744 0 0 1 11.205 6.575 1 1 0 0 1 0 .696 10.747 10.747 0 0 1-1.444 2.49"/><path d="M14.084 14.158a3 3 0 0 1-4.242-4.242"/><path d="M17.479 17.499a10.75 10.75 0 0 1-15.417-5.151 1 1 0 0 1 0-.696 10.75 10.75 0 0 1 4.446-5.143"/><path d="m2 2 20 20"/></svg>` : `<svg width="20" height="20" fill="none" stroke="#999" stroke-width="2" viewBox="0 0 24 24"><path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"/><circle cx="12" cy="12" r="3"/></svg>`}
+            </button>
+          </div>
+        </div>
+        <div class="divider"></div>
+        <div class="detail-item">
+          <p class="label" style="font-size:13px;color:#999;margin-bottom:8px;">Victoria Police barcode</p>
+          <div class="barcode-wrap">
+            <img src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/68f76fb0e5537db2ab995755/03372e822_Screenshot2025-10-23at103400am.png" alt="Barcode">
+            <button style="padding:8px;color:#666;">
+              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" x2="14" y1="3" y2="10"/><line x1="3" x2="10" y1="21" y2="14"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>`;
+  } else if (currentTab === 'identity') {
+    const sigHTML = p.sig_url ? `<img src="${p.sig_url}" alt="Sig" style="height:64px;">` : '<div style="height:64px;display:flex;align-items:center;color:#999;font-size:13px;font-style:italic;">No signature available</div>';
+    el.innerHTML = `
+      <h2 class="detail-name">${p.full_name || 'NAME NOT SET'}</h2>
+      <div style="margin-bottom:24px;">
+        <p style="font-size:13px;color:#999;margin-bottom:4px;">Address</p>
+        <p style="font-weight:600;color:#111;">${p.address1 || '-'}</p>
+        <p style="font-weight:600;color:#111;">${p.address2 || ''}</p>
+      </div>
+      <div>
+        <p style="font-size:13px;color:#999;margin-bottom:8px;">Signature</p>
+        ${sigHTML}
+      </div>`;
+  } else {
+    el.innerHTML = `
+      <p style="font-size:13px;color:#999;margin-bottom:12px;">Age status</p>
+      <div class="age-status">
+        <div class="age-check"><svg width="14" height="14" fill="none" stroke="white" stroke-width="2.5" viewBox="0 0 20 20"><path d="M6 10L9 13L14 7"/></svg></div>
+        <p style="font-size:17px;font-weight:600;color:#111;">Over 18</p>
+      </div>`;
+  }
+}
+
+function toggleCard() {
+  cardVisible = !cardVisible;
+  renderTab();
+}
+
+// ---- QR ----
+function startQR() {
+  qrSeconds = 120;
+  drawQR();
+  updateQRTimer();
+  if (qrInterval) clearInterval(qrInterval);
+  qrInterval = setInterval(() => {
+    qrSeconds--;
+    updateQRTimer();
+    if (qrSeconds <= 0) { qrSeconds = 120; drawQR(); }
+  }, 1000);
+}
+function updateQRTimer() {
+  const m = Math.floor(qrSeconds/60);
+  const s = qrSeconds % 60;
+  document.getElementById('qrTimer').textContent = `QR expires ${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
+}
+function drawQR() {
+  const c = document.getElementById('qrCanvas');
+  const ctx = c.getContext('2d');
+  ctx.fillStyle = 'white'; ctx.fillRect(0,0,280,280);
+  ctx.fillStyle = 'black';
+  for (let i=0;i<80;i++) for (let j=0;j<80;j++) if(Math.random()>0.5) ctx.fillRect(j*(280/80),i*(280/80),280/80,280/80);
+}
+
+// ---- DEMERIT ----
+function updateDemerit() {
+  const b = state.demerit.balance || 0;
+  const t = state.demerit.threshold || 12;
+  document.getElementById('demeritBalance').textContent = b;
+  document.getElementById('demeritThreshold').textContent = '/ ' + t;
+  document.getElementById('demeritMsg').textContent = `You currently have ${b} demerit points. ${b === 0 ? 'Keep up the safe driving!' : 'Drive safely to keep your licence.'}`;
+}
+
+// ---- ADMIN ----
+function loadAdmin() {
+  const p = state.profile, l = state.licence, d = state.demerit;
+  document.getElementById('f_full_name').value = p.full_name || '';
+  document.getElementById('f_first_name').value = p.first_name || '';
+  document.getElementById('f_address1').value = p.address1 || '';
+  document.getElementById('f_address2').value = p.address2 || '';
+  document.getElementById('f_dob').value = p.dob || '';
+  document.getElementById('f_permit_num').value = l.permit_num || '';
+  document.getElementById('f_issue_date').value = l.issue_date || '';
+  document.getElementById('f_p1_issue_date').value = l.p1_issue_date || '';
+  document.getElementById('f_expiry').value = l.expiry || '';
+  document.getElementById('f_card_num').value = l.card_num || '';
+  document.getElementById('f_permit_type').value = l.permit_type || 'P';
+  document.getElementById('f_demerit_bal').value = d.balance || 0;
+  document.getElementById('f_demerit_thresh').value = d.threshold || 12;
+  const pw = document.getElementById('photoPreviewWrap');
+  pw.innerHTML = p.photo_url ? `<img src="${p.photo_url}" class="preview-img">` : '';
+  const sw = document.getElementById('sigPreviewWrap');
+  sw.innerHTML = p.sig_url ? `<img src="${p.sig_url}" class="preview-sig">` : '';
+}
+
+function handlePhoto(input) {
+  const file = input.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = e => {
+    state.profile.photo_url = e.target.result;
+    document.getElementById('photoPreviewWrap').innerHTML = `<img src="${e.target.result}" class="preview-img">`;
+  };
+  reader.readAsDataURL(file);
+}
+
+function handleSig(input) {
+  const file = input.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = e => {
+    state.profile.sig_url = e.target.result;
+    document.getElementById('sigPreviewWrap').innerHTML = `<img src="${e.target.result}" class="preview-sig">`;
+  };
+  reader.readAsDataURL(file);
+}
+
+function saveAll() {
+  const btn = document.getElementById('saveBtn');
+  btn.disabled = true;
+  btn.innerHTML = '<svg width="16" height="16" fill="none" stroke="white" stroke-width="2" viewBox="0 0 24 24" class="spinner-svg"><circle cx="12" cy="12" r="10" stroke="white" stroke-width="2" stroke-linecap="round" stroke-dasharray="31" stroke-dashoffset="10"/></svg> Saving...';
+
+  state.profile.full_name = document.getElementById('f_full_name').value;
+  state.profile.first_name = document.getElementById('f_first_name').value;
+  state.profile.address1 = document.getElementById('f_address1').value;
+  state.profile.address2 = document.getElementById('f_address2').value;
+  state.profile.dob = document.getElementById('f_dob').value;
+  state.licence.permit_num = document.getElementById('f_permit_num').value;
+  state.licence.issue_date = document.getElementById('f_issue_date').value;
+  state.licence.p1_issue_date = document.getElementById('f_p1_issue_date').value;
+  state.licence.expiry = document.getElementById('f_expiry').value;
+  state.licence.card_num = document.getElementById('f_card_num').value;
+  state.licence.permit_type = document.getElementById('f_permit_type').value;
+  state.demerit.balance = parseInt(document.getElementById('f_demerit_bal').value) || 0;
+  state.demerit.threshold = parseInt(document.getElementById('f_demerit_thresh').value) || 12;
+
+  save();
+
+  setTimeout(() => {
+    btn.disabled = false;
+    btn.innerHTML = `<svg width="16" height="16" fill="none" stroke="white" stroke-width="2" viewBox="0 0 24 24"><path d="M15.2 3a2 2 0 011.4.6l3.8 3.8a2 2 0 01.6 1.4V19a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2z"/><path d="M17 21v-7a1 1 0 00-1-1H8a1 1 0 00-1 1v7"/><path d="M7 3v4a1 1 0 001 1h7"/></svg> Saved!`;
+    setTimeout(() => {
+      btn.innerHTML = `<svg width="16" height="16" fill="none" stroke="white" stroke-width="2" viewBox="0 0 24 24"><path d="M15.2 3a2 2 0 011.4.6l3.8 3.8a2 2 0 01.6 1.4V19a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2z"/><path d="M17 21v-7a1 1 0 00-1-1H8a1 1 0 00-1 1v7"/><path d="M7 3v4a1 1 0 001 1h7"/></svg> Save All Changes`;
+      show('home');
+    }, 800);
+  }, 600);
+}
+
+// ---- PIN ----
+function buildPin() {
+  const row1 = document.getElementById('pinNumRow1');
+  const row2 = document.getElementById('pinNumRow2');
+  const row3 = document.getElementById('pinNumRow3');
+  const bot = document.getElementById('pinBottom');
+  [1,2,3].forEach(n => row1.innerHTML += `<button class="pin-btn" onclick="pinPress('${n}')">${n}</button>`);
+  [4,5,6].forEach(n => row2.innerHTML += `<button class="pin-btn" onclick="pinPress('${n}')">${n}</button>`);
+  [7,8,9].forEach(n => row3.innerHTML += `<button class="pin-btn" onclick="pinPress('${n}')">${n}</button>`);
+  bot.innerHTML = `<button class="pin-btn forgot">Forgot?</button><button class="pin-btn" onclick="pinPress('0')">0</button><button class="pin-btn delete" onclick="pinDel()"><img src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/68f76fb0e5537db2ab995755/ae2518d69_IMG_6944.jpg" alt="Del"></button>`;
+}
+
+let pinVal = '';
+function pinPress(d) {
+  if (pinVal.length >= 6) return;
+  pinVal += d;
+  updatePinDots();
+  if (pinVal.length === 6) setTimeout(() => { pinVal = ''; updatePinDots(); show('home'); }, 300);
+}
+function pinDel() { pinVal = pinVal.slice(0,-1); updatePinDots(); }
+function updatePinDots() {
+  document.querySelectorAll('.pin-dot').forEach((dot, i) => {
+    dot.classList.toggle('filled', i < pinVal.length);
+  });
+}
+
+
+// ---- HOLOGRAM TILT EFFECT ----
+(function() {
+  let holoActive = false;
+
+  function applyTilt(beta, gamma) {
+    const holo = document.querySelector('.photo-area .hologram');
+    if (!holo) return;
+    // Use tilt magnitude to drive opacity only — no movement
+    const x = Math.max(-90, Math.min(90, gamma || 0));
+    const y = Math.max(-90, Math.min(90, beta || 0));
+    const tilt = Math.sqrt(x * x + y * y);
+    // Map tilt 0-60 degrees to opacity 0.1-0.95
+    const opacity = 0.1 + Math.min(tilt / 55, 1) * 0.85;
+    holo.style.transform = '';
+    holo.style.opacity = opacity.toFixed(2);
+    holo.style.transition = 'opacity 0.15s ease-out';
+  }
+
+  function resetHolo() {
+    const holo = document.querySelector('.photo-area .hologram');
+    if (!holo) return;
+    holo.style.transform = '';
+    holo.style.opacity = '0.1';
+    holo.style.transition = 'opacity 0.3s ease-out';
+  }
+
+  function startHologram() {
+    if (holoActive) return;
+
+    function handleMotion(e) {
+      const ld = document.getElementById('licence-detail');
+      if (!ld || !ld.classList.contains('active')) return;
+      applyTilt(e.beta, e.gamma);
+    }
+
+    // iOS 13+ requires permission
+    if (typeof DeviceOrientationEvent !== 'undefined' &&
+        typeof DeviceOrientationEvent.requestPermission === 'function') {
+      DeviceOrientationEvent.requestPermission()
+        .then(response => {
+          if (response === 'granted') {
+            window.addEventListener('deviceorientation', handleMotion);
+            holoActive = true;
+          }
+        })
+        .catch(console.error);
+    } else {
+      // Android and older iOS - no permission needed
+      window.addEventListener('deviceorientation', handleMotion);
+      holoActive = true;
+    }
+  }
+
+  // Trigger hologram when licence detail screen opens
+  const origShow = window.show;
+  window.show = function(id) {
+    origShow(id);
+    if (id === 'licence-detail') {
+      setTimeout(startHologram, 300);
+    } else {
+      resetHolo();
+    }
+  };
+})();
+
+// ---- PULL TO REFRESH ----
+(function() {
+  let startY = 0;
+  let isPulling = false;
+  let ptrTriggered = false;
+  let ptrEl = null;
+
+  function createOverlay() {
+    if (document.getElementById('ptr-overlay')) return;
+    const div = document.createElement('div');
+    div.id = 'ptr-overlay';
+    div.style.cssText = 'position:fixed;top:60px;left:50%;transform:translateX(-50%);background:white;z-index:999;display:none;flex-direction:row;align-items:center;gap:10px;padding:10px 20px;border-radius:999px;box-shadow:0 2px 12px rgba(0,0,0,0.15);white-space:nowrap;';
+    div.innerHTML = `
+      <div style="width:20px;height:20px;flex-shrink:0;">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" style="animation:spin 0.9s linear infinite;">
+          <defs><linearGradient id="ptrg2" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#52B848" stop-opacity="0"/>
+            <stop offset="100%" stop-color="#52B848" stop-opacity="1"/>
+          </linearGradient></defs>
+          <circle cx="12" cy="12" r="10" stroke="url(#ptrg2)" stroke-width="2.5" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div id="ptr-time" style="font-size:13px;color:#5B6B7C;font-weight:500;font-family:-apple-system,sans-serif;"></div>
+    `;
+    document.body.appendChild(div);
+  }
+
+  function showRefresh() {
+    createOverlay();
+    const overlay = document.getElementById('ptr-overlay');
+    const timeEl = document.getElementById('ptr-time');
+    overlay.style.display = 'flex';
+    const now = new Date();
+    const timeStr = 'Last refreshed: ' + now.toLocaleString('en-AU', {
+      weekday:'short', day:'numeric', month:'short', year:'numeric',
+      hour:'2-digit', minute:'2-digit', hour12:true
+    });
+    timeEl.textContent = timeStr;
+    setTimeout(() => {
+      overlay.style.display = 'none';
+      const rt = document.getElementById('refreshTime');
+      if (rt) rt.textContent = now.toLocaleString('en-AU', {
+        weekday:'short', day:'numeric', month:'short', year:'numeric',
+        hour:'2-digit', minute:'2-digit', hour12:false
+      });
+    }, 1800);
+  }
+
+  document.addEventListener('touchstart', function(e) {
+    const ld = document.getElementById('licence-detail');
+    if (!ld || !ld.classList.contains('active')) return;
+    startY = e.touches[0].clientY;
+    isPulling = true;
+    ptrTriggered = false;
+  }, {passive: true});
+
+  document.addEventListener('touchmove', function(e) {
+    if (!isPulling) return;
+    const ld = document.getElementById('licence-detail');
+    if (!ld || !ld.classList.contains('active')) return;
+    const deltaY = e.touches[0].clientY - startY;
+    const scrollTop = ld.scrollTop || 0;
+    if (deltaY > 150 && scrollTop <= 0 && !ptrTriggered) {
+      ptrTriggered = true;
+      showRefresh();
+    }
+  }, {passive: true});
+
+  document.addEventListener('touchend', function() {
+    isPulling = false;
+  }, {passive: true});
+})();
+
+// ---- INIT ----
+load();
+buildPin();
+setTimeout(() => show('pin'), 2000);
+</script>
+</body>
+</html>
